@@ -1,0 +1,8 @@
+<h3>Edit Restaurant</h3>
+<%= form_with model: @restaurant do |form| %>
+  <p>Name<%= form.text_field :name %></p>
+  <p>Address<%= form.text_area :address %></p>
+  <p>Phone Number<%= form.text_field :phone_number %></p>
+  <p>Category<%= form.select :category, ['chinese', 'italian', 'japanese', 'french', 'belgian'] %></p>
+  <p><%= form.submit 'Submit' %></p>
+<% end %>

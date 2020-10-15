@@ -1,0 +1,16 @@
+<div class="row row-cols-1 row-cols-md-3 m-3">
+  <% @restaurants.each do |restaurant| %>
+    <div class="col mb-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5><%= link_to restaurant.name, restaurant_path(id: restaurant.id), class: 'card-title' %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= restaurant.category.titleize %> Dishes</h6>
+          <p class="card-text"><%= truncate(restaurant.address, length: 150, omission: '... (continued)') %></p>
+          <p class="card-text"><%= restaurant.phone_number %></p>
+          <%= link_to 'Edit', edit_restaurant_path(id: restaurant.id), class: 'card-link' %>
+          <%= link_to 'Destroy', restaurant_path(id: restaurant.id), method: :delete, data: {confirm: "Are you sure?"}, class: 'card-link' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

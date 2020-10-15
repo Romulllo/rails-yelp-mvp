@@ -7,9 +7,20 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <!-- Add these line for detecting device width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <!-- [...] -->
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <%= link_to 'Restaurant List', root_path, class: 'navbar-brand' %>
+    <%= link_to 'New restaurant', new_restaurant_path, class: 'nav-link'  %>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
